@@ -1,14 +1,23 @@
 :root {
   --logo-color: #68442B; }
 
-*, html {
+/* base setting */
+*, html, body {
   max-width: 100%;
   margin: 0;
   padding: 0;
   font-size: 30px;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #000000;
-  color: var(--logo-color); }
+  color: var(--logo-color);
+  scroll-behavior: smooth !important; }
+
+body {
+  scroll-behavior: smooth; }
+
+li, i, a {
+  cursor: pointer;
+  text-decoration: none; }
 
 /* scroll bar design */
 ::-webkit-scrollbar-track {
@@ -16,17 +25,16 @@
   border-left: #3d2413 solid 0.8px; }
 
 ::-webkit-scrollbar {
-  width: 10px; }
+  width: 5px; }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 100px;
   background: var(--logo-color); }
 
 ::-webkit-scrollbar-thumb:hover {
   background: #3d2413; }
 
+/* Header setting */
 header {
-  border-bottom: #272624 solid 2px;
   width: 99%;
   height: 10vh;
   margin: auto 0.5%;
@@ -34,48 +42,183 @@ header {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  position: sticky;
+  position: fixed;
   top: 3px;
-  z-index: 999; }
+  z-index: 99; }
   header .continers {
     width: 70%; }
     header .continers nav ul {
-      width: 70%;
-      margin: auto 15%;
+      width: 60%;
+      margin: auto 20%;
       display: flex;
       justify-content: space-around;
+      text-align: center;
       align-items: center;
       list-style: none; }
       header .continers nav ul li {
         font-size: clamp(0.5rem, 3vw, 0.8rem); }
-
+  header .searchInput {
+    position: fixed;
+    top: 12%;
+    right: 6%;
+    opacity: 0.80;
+    border: var(--logo-color) solid 1px;
+    border-radius: 5px;
+    color: aliceblue;
+    animation: searchBarTransformation 0.75s ease; }
+  header .searchInput::placeholder {
+    font-size: 0.9rem;
+    text-align: center; }
+@keyframes searchBarTransformation {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+/* main setting */
 main {
+  position: relative;
   width: 100%; }
   main #Home {
-    width: 100%;
-    height: 95vh;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background: url("/resources/images/bg_main.jpg") center no-repeat;
+    background: url("/resources/images/bg_main.png") center no-repeat;
     background-size: cover;
-    position: relative;
+    background-position: left;
     color: wheat; }
     main #Home h1 {
       position: relative;
       top: -40px;
-      padding-left: 20px;
+      padding-left: 90px;
       font-size: clamp(1.5rem, 5vw, 3rem);
       background: transparent; }
     main #Home p {
       position: relative;
       font-size: 0.6rem;
       color: #8d8680;
-      width: 20cm;
+      width: 15cm;
       top: -70px;
-      padding-left: 20px;
+      padding-left: 90px;
       background: transparent; }
+  main #Menu {
+    width: 100%;
+    height: 200vh; }
+  main #About {
+    width: 100%;
+    height: 200vh; }
 
+#MainbackUP {
+  position: sticky;
+  top: 10vh;
+  cursor: pointer; }
+  #MainbackUP i {
+    background: transparent;
+    z-index: 99999;
+    position: absolute;
+    top: 75vh;
+    left: 92vw;
+    opacity: 0.75; }
+
+/* Modle */
+.backBlur {
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: #8d8680;
+  opacity: 0.90; }
+  .backBlur section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 70%;
+    margin: 35%;
+    border-radius: 5%; }
+    .backBlur section .Modle {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: url(/resources/images/bg_login.webp) no-repeat center;
+      background-size: 120%; }
+      .backBlur section .Modle .modleLayer {
+        z-index: 1; }
+      .backBlur section .Modle .login, .backBlur section .Modle .register {
+        z-index: 2;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .backBlur section .Modle .login form, .backBlur section .Modle .register form {
+          display: flex;
+          position: relative;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background: transparent;
+          text-align: center;
+          width: 100%;
+          height: 100%; }
+          .backBlur section .Modle .login form span, .backBlur section .Modle .register form span {
+            background: transparent; }
+          .backBlur section .Modle .login form label, .backBlur section .Modle .register form label {
+            background: transparent;
+            color: white; }
+          .backBlur section .Modle .login form input, .backBlur section .Modle .register form input {
+            opacity: 0.90;
+            border: #8d8680 solid 1px;
+            border-radius: 10px;
+            color: aliceblue; }
+          .backBlur section .Modle .login form .sub, .backBlur section .Modle .register form .sub {
+            border: #000000;
+            background-color: aliceblue;
+            color: black;
+            padding: 0.3rem;
+            cursor: pointer;
+            margin: 2px; }
+            .backBlur section .Modle .login form .sub span, .backBlur section .Modle .register form .sub span {
+              background: transparent;
+              opacity: 0; }
+          .backBlur section .Modle .login form #submit1, .backBlur section .Modle .login form #submit2, .backBlur section .Modle .register form #submit1, .backBlur section .Modle .register form #submit2 {
+            cursor: pointer;
+            padding-left: 10px; }
+          .backBlur section .Modle .login form .closeModle, .backBlur section .Modle .register form .closeModle {
+            content: "X";
+            width: 6%;
+            background-color: #753434;
+            border-radius: 10px;
+            color: aliceblue;
+            justify-self: flex-start;
+            align-self: flex-end;
+            position: absolute;
+            top: 3%;
+            right: 3%;
+            cursor: pointer; }
+        .backBlur section .Modle .login .register, .backBlur section .Modle .register .register {
+          position: absolute; }
+
+@keyframes ModleSignUp {
+  from {
+    transform: rotateY(0deg); }
+  to {
+    transform: rotateY(180deg); } }
+@keyframes ModleLogin {
+  from {
+    transform: rotateY(180deg); }
+  to {
+    transform: rotateY(0deg); } }
+/* fotter setting */
 footer {
   width: 100%;
   height: 30vh;
@@ -101,5 +244,18 @@ footer {
     text-align: center;
     border-top: #68442B solid 2px;
     font-size: 0.7rem; }
+
+/* animation od header */
+.HeaderAnimetion {
+  animation: HeaderOpacity 0.75s ease-in;
+  display: none; }
+
+@keyframes HeaderOpacity {
+  100%,
+    0% {
+    opacity: 1; }
+  70% {
+    opacity: 0;
+    transform: translateY(-100px); } }
 
 /*# sourceMappingURL=style.css.map */

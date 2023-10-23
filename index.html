@@ -3,19 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="none"> 
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/css/style.css">
-    <title>Flowers Shop</title>
+    <link rel="stylesheet" href="resources/css/style.css"> 
+    <link rel="icon" href="/resources/images/Coffee_SHOP.Logo.png">
+    <title>Coffee</title>
 </head>
 <body>
-    <header>
+    <div class="backBlur" style="display: none;">
+        <section>
+            <div class="Modle">
+                <div class="login">
+                    <form action="/" method="get">
+                        <div class="closeModle">x</div>
+                        <span><label for="username">Username</label>
+                        <input id= "username" type="text"></span>
+                        <br>
+                        <span><label for="pass">Password.</label>
+                        <input type="password" id="pass"></span>
+
+                        <br><br>
+                        <span><span id="submit1"> register</span>
+                        <input type="submit" class="sub"></span>
+                    </form>
+                </div>
+
+                <div class="modleLayer"></div>
+
+                <div class="register" style="display: none;">
+                    <form action="/" method="post">
+                        <div class="closeModle"">x</div>
+                        <br><br>
+                        <span><label for="name" style="margin-right: 60px;">Name</label>
+                        <input id= "username" type="text"></span>
+                        <br>
+                        <span><label for="username">Username</label>
+                        <input id= "username" type="text"></span>
+                        <br>
+                        <span><label for="pass">Password.</label>
+                        <input type="password" id="pass"></span>
+
+                        <br><br>
+                        <span><span id="submit2"> login</span>
+                        <input type="submit" class="sub" ></span>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <header id ="header">
         <div>
-            <img src="resources/images/Coffee_SHOP.Logo.png" alt="Logo of the website" class="icon"></div>
+            <a href="index.html">
+                <img src="resources/images/Coffee_SHOP.Logo.png" alt="Logo of the website" class="icon">
+            </a>
+        </div>
         <div class="continers">
             <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Menu</li>
+                <ul id = 'listOfHeader'>
+                    <a href="#Home"><li>Home</li></a>
+                    <a href="#Menu"><li>Menu</li></a>
                     <li>Reviwe</li>
                     <li>Blogs</li>
                     <li>About</li>
@@ -23,31 +72,27 @@
                 </ul>
             </nav> 
         </div>
-        <div>
+        <div class="continersHelper">
             <nav>
-                <i class="fa fa-search"></i>
-                <i class="fa fa-sign-in"></i>
-                <i class="fa fa-bars" aria-hidden="true""></i>
-                <i class="fa fa-times" aria-hidden="true"></i>
+                <i id = "Searching" class="fa fa-search" ></i>
+                <i id = "profileDoor" class="fa fa-sign-in"></i>
+                <i id = "MenuIcon" class="fa fa-bars" style = "display: none;"></i>
+                <i id = "closeMenuIcon" class="fa fa-times" style = "display: none;"></i>
             </nav>
         </div>
     </header>
 
 
     <main>
-        <div id="Home">
-            <div>
-
-            </div>
-            <h1>Coffee Shop</h1>
-            <br>
-           <p>Its warm, inviting atmosphere beckons weary souls seeking solace from the chaos of the outside world. As you step inside, the rich aroma of freshly brewed coffee envelops you, instantly awakening your senses. </p>
-           </div>
+        
     </main>
 
     <footer>
         <div>
-            <img src="resources/images/Coffee_SHOP.Logo.png" alt="Logo of the website" class="icon">
+            <a href="index.html">
+                <img src="resources/images/Coffee_SHOP.Logo.png" alt="Logo of the website" class="icon">
+            </a>
+            
         </div>
         
         <div class="footer_last">
@@ -60,5 +105,7 @@
         </div>  
         <p>Copyrigth © 2023 MrDalton</p>
     </footer>
+
+    <script src="resources/js/app.js"></script>
 </body>
 </html>
