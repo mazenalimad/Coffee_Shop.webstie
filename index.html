@@ -15,14 +15,15 @@
     <div class="backBlur" style="display: none;">
         <section>
             <div class="Modle">
+                <div class="bgOFmodle"></div>
                 <div class="login">
                     <form action="/" method="get">
                         <div class="closeModle">x</div>
                         <span><label for="username">Username</label>
-                        <input id= "username" type="text"></span>
+                        <input id= "username" type="text" onkeypress="checkText(event)"></span>
                         <br>
                         <span><label for="pass">Password.</label>
-                        <input type="password" id="pass"></span>
+                        <input type="password" id="pass" onkeypress="checkNum(event)"></span>
 
                         <br><br>
                         <span><span id="submit1"> register</span>
@@ -32,18 +33,19 @@
 
                 <div class="modleLayer"></div>
 
+                <div class="bgOFmodle"></div>
                 <div class="register" style="display: none;">
                     <form action="/" method="post">
                         <div class="closeModle"">x</div>
                         <br><br>
-                        <span><label for="name" style="margin-right: 60px;">Name</label>
-                        <input id= "username" type="text"></span>
+                        <span><label for="number" style="margin-right: 30px;">Number</label>
+                        <input id= "number" type="text" onkeypress="checkNum(event)"></span>
                         <br>
                         <span><label for="username">Username</label>
-                        <input id= "username" type="text"></span>
+                        <input id= "username" type="text" onkeypress="checkText(event)"></span>
                         <br>
                         <span><label for="pass">Password.</label>
-                        <input type="password" id="pass"></span>
+                        <input type="password" id="pass" onkeypress="checkNum(event)"></span>
 
                         <br><br>
                         <span><span id="submit2"> login</span>
@@ -106,6 +108,26 @@
         <p>Copyrigth © 2023 MrDalton</p>
     </footer>
 
+    <script>
+        function checkText(ev) {
+            var ch = String.fromCharCode(ev.which);
+
+            if(!(/[ا-ي]/.test(ch) || /[a-z]/.test(ch) || /[A-Z]/.test(ch))){
+                ev.preventDefault();
+            }
+        }
+
+        function checkNum(ev) {
+            var ch = String.fromCharCode(ev.which);
+        
+            if(!(/[0-9]/.test(ch))){
+                ev.preventDefault();
+            }
+        }
+
+
+        $('')
+    </script>
     <script src="resources/js/app.js"></script>
 </body>
 </html>

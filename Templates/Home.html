@@ -8,6 +8,69 @@
    <p>Its warm, inviting atmosphere beckons weary souls seeking solace from the chaos of the outside world. As you step inside, the rich aroma of freshly brewed coffee envelops you, instantly awakening your senses. </p>
 </div>
 
-<div id="Menu" style="display: none;">
 
+
+<div id="Menu">
+
+    <div class="slide-images">
+        <div class="img-container">
+            <img src="/resources/images/red-eye.png" >
+            <p>Red Eye</p>
+        </div>
+        <div class="img-container">
+            <img src="/resources/images/Nitro-cold_brew.webp" width="3600px" height="100%">
+            <p>Nitro cold brew</p>
+        </div>
+        <div class="img-container">
+            <img src="/resources/images/coffee_Macchiate.png" width="100%">
+            <p>Coffee Macchiate</p>
+        </div>
+    </div>
+    <div class="imageStack">
+        <div class="parentMenu">
+            <div class="bg-childMenu Espresso"></div>
+            <div class="title-childMenu">Espresso</div>
+        </div>
+    
+        <div class="parentMenu">
+            <div class="bg-childMenu Turkish_Coffee"></div>
+            <div class="title-childMenu">Turkish Coffee</div>
+        </div>
+    </div>
+    
 </div>
+
+<script>
+    var count = 0;
+    slidIMG();
+
+    function slidIMG(){
+        var i;
+        var x = document.getElementsByClassName("img-container");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        count++;
+        if (count > x.length) {count = 1}    
+        x[count-1].style.display = "block";  
+        setTimeout(slidIMG, 5000); // Change image every 2 seconds
+    }
+
+    $(document).ready(() => {
+        $('#Home h1').click(() => {
+            alert($("#Home h1").style.color == 'red');
+            if(!($("#Home h1").style.color == 'red')){
+                $("#Home h1").css ({
+                'color': 'red'
+                })
+            }else{
+                $("#Home h1").css ({
+                'color': 'red'
+                })
+            }
+            
+        })
+    })
+
+    
+</script>

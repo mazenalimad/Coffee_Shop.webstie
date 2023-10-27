@@ -4,14 +4,15 @@ $(document).ready(() => {
     // $('#listOfHeader li').on("click", () => {
     //     alert($(this).text());
     // })
-    document.getElementById('listOfHeader').addEventListener('click', (ev) => {
+    $('#listOfHeader').on('click', (ev) => {
         $('main').load(`/Templates/${ev.target.innerText}.html`);
     });
 
 
     $(window).load(() => {
-        $('#Menu').hide();
+        //$('#Menu').hide();
         $('.continersHelper > nav').append("<input class='searchInput' style = 'display: none' placeholder='searching..' type='text'>")
+        $(body).scrollTop() = 0;
     })
 
     $(window).scroll(() => {
@@ -42,14 +43,17 @@ $(document).ready(() => {
     })
 
     $('#profileDoor').click(() => {
-        $('.backBlur').show(500);
+        $('.backBlur > section').hide();
+        $('.backBlur').show();
+        $('.backBlur > section').show(500);
         $('body').css ({
             'overflow': 'hidden'
         })
     })
 
     $('.closeModle').click (() => {
-        $('.backBlur').hide('0.02s');
+
+        $('.backBlur').hide();
         $('body').css ({
             'overflow': 'visible'
         })
@@ -88,5 +92,4 @@ $(document).ready(() => {
             $('.register').hide();
         }, 850);
     })
-
 })

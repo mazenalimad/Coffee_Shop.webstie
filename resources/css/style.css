@@ -104,12 +104,148 @@ main {
       background: transparent; }
   main #Menu {
     width: 100%;
-    height: 200vh; }
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    overflow: hidden; }
+    main #Menu .slide-images {
+      width: 40%;
+      height: 88vh;
+      margin: auto 2.5%; }
+      main #Menu .slide-images .img-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        height: 105%; }
+        main #Menu .slide-images .img-container img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 5%;
+          z-index: 2; }
+        main #Menu .slide-images .img-container p {
+          z-index: 3;
+          color: white;
+          font-size: 2rem;
+          background: transparent; }
+    main #Menu .imageStack {
+      width: 35%;
+      margin: auto 2.5%;
+      height: 88vh; }
+      main #Menu .imageStack .parentMenu {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: #8d8680 solid 1px;
+        border-radius: 20px;
+        width: 100%;
+        height: 50%;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10; }
+        main #Menu .imageStack .parentMenu .bg-childMenu {
+          width: 100%;
+          height: 100%;
+          background-size: 100%;
+          position: absolute;
+          z-index: 1; }
+        main #Menu .imageStack .parentMenu .title-childMenu {
+          z-index: 3;
+          color: white;
+          background: transparent; }
+      main #Menu .imageStack .parentMenu:hover .title-childMenu {
+        font-size: 2rem; }
+      main #Menu .imageStack .parentMenu:hover .bg-childMenu {
+        filter: blur(10px); }
+    main #Menu .Espresso {
+      background: url(/resources/images/Espresso.png) no-repeat center;
+      background-size: cover;
+      border-radius: 20px; }
+    main #Menu .Turkish_Coffee {
+      background: url(/resources/images/Turkish_Coffee.webp) no-repeat center;
+      background-size: 550px;
+      border-radius: 20px; }
+  main .aboutParent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100vh; }
+    main .aboutParent .aboutBG {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      background: url(/resources/images/coffee_shop.png) no-repeat center;
+      background-size: cover;
+      filter: blur(5px); }
+    main .aboutParent .aboutTEXT {
+      z-index: 3;
+      color: white;
+      background: transparent;
+      font-size: 4rem; }
   main #About {
     width: 100%;
-    height: 200vh; }
+    height: 70vh; }
+    main #About section {
+      width: 90%;
+      margin: 3% 5%; }
+      main #About section p {
+        color: #c2c2c2; }
+  main .aboutContact {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: url(/resources/images/contact.webp) no-repeat center;
+    background-size: cover;
+    filter: blur(5px); }
+  main #contact {
+    width: 100%;
+    height: 70vh; }
+    main #contact div {
+      width: 50%;
+      height: 50vh;
+      margin: 8% 25%;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      main #contact div .bgcontact {
+        width: 100%;
+        height: 100%;
+        background: url(/resources/images/bgcontact.avif) no-repeat center;
+        background-size: cover;
+        position: absolute;
+        padding: 50px;
+        border-radius: 8%;
+        filter: blur(8px); }
+      main #contact div form {
+        z-index: 5;
+        padding: 50px;
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: transparent;
+        text-align: center;
+        width: 100%;
+        height: 100%; }
+        main #contact div form input, main #contact div form textarea {
+          margin: 10px;
+          border-radius: 3%;
+          background: white; }
+        main #contact div form #Email, main #contact div form #Subject, main #contact div form #submit {
+          text-align: center;
+          border-radius: 10px;
+          padding: 6px; }
 
 #MainbackUP {
+  z-index: 10;
   position: sticky;
   top: 10vh;
   cursor: pointer; }
@@ -119,9 +255,17 @@ main {
     position: absolute;
     top: 75vh;
     left: 92vw;
-    opacity: 0.75; }
+    opacity: 0.80; }
 
 /* Modle */
+.backBlur::before {
+  content: "";
+  position: absolute;
+  background-color: #bdbdbd;
+  opacity: 0.80;
+  width: 100%;
+  height: 100%; }
+
 .backBlur {
   z-index: 9999;
   display: flex;
@@ -130,8 +274,7 @@ main {
   position: fixed;
   width: 100%;
   height: 100vh;
-  background-color: #8d8680;
-  opacity: 0.90; }
+  background: transparent; }
   .backBlur section {
     position: relative;
     display: flex;
@@ -140,7 +283,8 @@ main {
     width: 30%;
     height: 70%;
     margin: 35%;
-    border-radius: 5%; }
+    border-radius: 5%;
+    background: transparent; }
     .backBlur section .Modle {
       position: relative;
       display: flex;
@@ -148,8 +292,14 @@ main {
       align-items: center;
       width: 100%;
       height: 100%;
-      background: url(/resources/images/bg_login.webp) no-repeat center;
-      background-size: 120%; }
+      background: transparent; }
+      .backBlur section .Modle .bgOFmodle {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: url(/resources/images/bg_login.webp) no-repeat center;
+        background-size: 160%;
+        filter: blur(10px); }
       .backBlur section .Modle .modleLayer {
         z-index: 1; }
       .backBlur section .Modle .login, .backBlur section .Modle .register {
@@ -247,7 +397,7 @@ footer {
 
 /* animation od header */
 .HeaderAnimetion {
-  animation: HeaderOpacity 0.75s ease-in;
+  animation: HeaderOpacity 3s ease-in;
   display: none; }
 
 @keyframes HeaderOpacity {
