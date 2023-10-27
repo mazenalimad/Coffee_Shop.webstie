@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('main').load('https://Templates/Home.html');
+    $('main').load('https://Coffee_Shop.webstie/Templates/Home.html');
 
     // $('#listOfHeader li').on("click", () => {
     //     alert($(this).text());
