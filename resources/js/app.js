@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('main').load('https://Coffee_Shop.webstie/Templates/Home.html');
+    $('main').load('https://mazenalimad.github.io/Coffee_Shop.webstie/Templates/Home.html ');
 
     // $('#listOfHeader li').on("click", () => {
     //     alert($(this).text());
