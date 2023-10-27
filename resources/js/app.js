@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('main').load('/Templates/Home.html');
+    $('main').load('https://Templates/Home.html');
 
     // $('#listOfHeader li').on("click", () => {
     //     alert($(this).text());
