@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    $('main').load('https://mazenalimad.github.io/Coffee_Shop.webstie/Templates/Home.html ');
+    $('main').load('https://Templates/Home.html');
 
     // $('#listOfHeader li').on("click", () => {
     //     alert($(this).text());
@@ -12,7 +12,6 @@ $(document).ready(() => {
     $(window).load(() => {
         //$('#Menu').hide();
         $('.continersHelper > nav').append("<input class='searchInput' style = 'display: none' placeholder='searching..' type='text'>")
-        $(body).scrollTop() = 0;
     })
 
     $(window).scroll(() => {
